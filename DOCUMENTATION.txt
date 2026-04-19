@@ -1,6 +1,5 @@
 This documentation is licensed under CC-BY 4.0.
-ConsolMatrix - structure for ConsolMatrix
-
+ConsolMatrix - public structure for ConsolMatrix
 
 bool ConsolMatrix_init(ConsolMatrix* matrix, int x, int y):
 if something is wrong, returns false
