@@ -83,7 +83,7 @@ bool ConsolMatrix_refreshMatrix(ConsolMatrix* matrix) // function for refreshing
 		{
 			int buffer_address = matrix->x_size * y + x;
 			colorForeground(matrix->buffer[buffer_address * 3], matrix->buffer[buffer_address * 3 + 1], matrix->buffer[buffer_address * 3 + 2]);
-			puts("лл");
+			fputs("лл",stdout);
 		}
 		fputs("\033[0m\n", stdout);
 	}
