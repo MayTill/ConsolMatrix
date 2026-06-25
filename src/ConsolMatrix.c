@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../include/ConsolMatrix.h"
+#include <ConsolMatrix.h>
 bool ConsolMatrix_init(ConsolMatrix* matrix, int x, int y)
 {
 	if (!matrix) return false;
