@@ -14,6 +14,9 @@ bool ConsolMatrix_init(ConsolMatrix* matrix, int x, int y)
 	matrix->x_size = x;
 	matrix->y_size = y;
 	matrix->buffer = calloc(1, x * y * 3);
+	#ifdef _WIN32
+	system("chcp 65001");
+	#endif
 	if (!matrix->buffer) return false;
 	return true;
 }
@@ -83,7 +86,7 @@ bool ConsolMatrix_refreshMatrix(ConsolMatrix* matrix) // function for refreshing
 		{
 			int buffer_address = matrix->x_size * y + x;
 			colorForeground(matrix->buffer[buffer_address * 3], matrix->buffer[buffer_address * 3 + 1], matrix->buffer[buffer_address * 3 + 2]);
-			fputs("лл",stdout);
+			fputs("\u2588\u2588",stdout);
 		}
 		fputs("\033[0m\n", stdout);
 	}
