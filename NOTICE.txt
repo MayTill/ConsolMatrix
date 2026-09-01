@@ -1,0 +1,6 @@
+ConsolMatrix
+Copyright (C) 2026 RMT0
+
+This product includes ConsolMatrix.
+Licensed under Apache 2.0 (http://www.apache.org/licenses/)
+ConsolMatrix repository: https://github.com/MayTill/ConsolMatrix
