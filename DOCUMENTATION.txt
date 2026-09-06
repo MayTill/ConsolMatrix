@@ -1,57 +1,51 @@
 This documentation is licensed under CC-BY 4.0.
-ConsolMatrix - public structure for ConsolMatrix
+For version 2.0.0pre
 
-bool ConsolMatrix_init(ConsolMatrix* matrix, int x, int y):
+bool ConsolMatrix_init(int x, int y):
 if something is wrong, returns false
 else return true
-matrix - pointer to ConsolMatrix
 x - x size of Matrix
 y - y size of Matrix
 Use to initialize ConsolMatrix
 
 
-bool ConsolMatrix_destroy(ConsolMatrix* matrix)
+bool ConsolMatrix_deinit()
 if something is wrong, returns false
 else true
-matrix - pointer to ConsolMatrix
-Use to destroy ConsolMatrix
+Use to deinit ConsolMatrix
 
 
-bool ConsolMatrix_drawPixel(ConsolMatrix* matrix, int x, int y, unsigned char stateR, unsigned char stateG, unsigned char stateB)
+bool ConsolMatrix_drawPixel(int x, int y, unsigned char stateR, unsigned char stateG, unsigned char stateB)
 if something is wrong, returns false
 else true
-matrix - pointer to ConsolMatrix
 x - x cordinate of pixel
 y - y cordinate of pixel
 stateR/stateG/stateB - RGB colors in 0-255 values
 Use to draw pixel when you know x and y
 
 
-bool ConsolMatrix_drawPixelA(ConsolMatrix* matrix, int buffer_address, unsigned char stateR, unsigned char stateG, unsigned char stateB)
+bool ConsolMatrix_drawPixelA(int buffer_address, unsigned char stateR, unsigned char stateG, unsigned char stateB)
 if something is wrong, returns false
 else true
-matrix - pointer to ConsolMatrix
 buffer_address - addres of pixel
 stateR/stateG/stateB - RGB colors in 0-255 values
 Use to draw pixel when you know pixel_address and you don't want to calculate it to x,y
 
 
 
-bool ConsolMatrix_fillAll(ConsolMatrix* matrix, unsigned char state)
+bool ConsolMatrix_fillAll(unsigned char state)
 if something is wrong, returns false
 else true
-matrix - pointer to ConsolMatrix
 state - color of Gray (no RGB possible) in 0-255 values
 
 
-bool ConsolMatrix_refreshMatrix(ConsolMatrix* matrix)
+bool ConsolMatrix_refreshMatrix()
 if something is wrong, returns false
 else true
-matrix - pointer to ConsolMatrix
 Use it to refresh Matrix (if you do DrawPixelA it doesn't refresh Matrix)
 
 
 Warnings:
 Use on terminals with ANSI Escape TRUECOLOR handling, else you will see like [38;2;255;255;255 and blocks (without color)
 Don't use ConsolMatrix without initializing
-Don't end program without destroying
+Don't end program without deinit
