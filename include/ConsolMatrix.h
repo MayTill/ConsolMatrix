@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
 // Copyright 2026 RMT0
-// ConsolMatr TRUE
+// ConsolMatrix
 // H FILE
-// 1.0.1 version
+// 2.0.0pre version
 #ifndef CMT
 #define CMT
 #ifdef __cplusplus
@@ -14,18 +14,12 @@ extern "C" {
 #else
 #define EXPORT
 #endif
-typedef struct
-{
-	int x_size;
-	int y_size;
-	unsigned char* buffer;
-} ConsolMatrix;
-EXPORT bool ConsolMatrix_init(ConsolMatrix* matrix, int x, int y);
-EXPORT bool ConsolMatrix_destroy(ConsolMatrix* matrix);
-EXPORT bool ConsolMatrix_drawPixel(ConsolMatrix* matrix, int x, int y, unsigned char stateR, unsigned char stateG, unsigned char stateB); // function for drawing pixel
-EXPORT bool ConsolMatrix_drawPixelA(ConsolMatrix* matrix, int buffer_address, unsigned char stateR, unsigned char stateG, unsigned char stateB); // function for drawing pixel
-EXPORT bool ConsolMatrix_fillAll(ConsolMatrix* matrix, unsigned char state); // function for filling matrix
-EXPORT bool ConsolMatrix_refreshMatrix(ConsolMatrix* matrix); // function for refreshing
+EXPORT bool ConsolMatrix_init(int x, int y);
+EXPORT bool ConsolMatrix_deinit();
+EXPORT bool ConsolMatrix_drawPixel(int x, int y, unsigned char stateR, unsigned char stateG, unsigned char stateB); // function for drawing pixel
+EXPORT bool ConsolMatrix_drawPixelA(int buffer_address, unsigned char stateR, unsigned char stateG, unsigned char stateB); // function for drawing pixel
+EXPORT bool ConsolMatrix_fillAll(unsigned char state); // function for filling matrix
+EXPORT bool ConsolMatrix_refreshMatrix(); // function for refreshing
 #ifdef __cplusplus
 }
 #endif
