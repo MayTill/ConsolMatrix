@@ -2,7 +2,7 @@
 // Copyright 2026 RMT0
 // ConsolMatrix
 // H FILE
-// 2.0.0pre version
+// 2.1.0pre version
 #ifndef CMT
 #define CMT
 #ifdef __cplusplus
@@ -20,6 +20,7 @@ EXPORT bool ConsolMatrix_drawPixel(int x, int y, unsigned char stateR, unsigned 
 EXPORT bool ConsolMatrix_drawPixelA(int buffer_address, unsigned char stateR, unsigned char stateG, unsigned char stateB); // function for drawing pixel
 EXPORT bool ConsolMatrix_fillAll(unsigned char state); // function for filling matrix
 EXPORT bool ConsolMatrix_refreshMatrix(); // function for refreshing
+EXPORT bool ConsolMatrix_refreshMatrixAndFix(); // function for refreshing and fixing
 #ifdef __cplusplus
 }
 #endif

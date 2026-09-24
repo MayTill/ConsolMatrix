@@ -1,48 +1,56 @@
 This documentation is licensed under CC-BY 4.0.
-For version 2.0.0pre
+For version 2.1.0pre
 
 bool ConsolMatrix_init(int x, int y):
 if something is wrong, returns false
 else return true
 x - x size of Matrix
 y - y size of Matrix
-Use to initialize ConsolMatrix
+Use it to initialize ConsolMatrix
 
 
 bool ConsolMatrix_deinit()
 if something is wrong, returns false
 else true
-Use to deinit ConsolMatrix
+Use it to deinit ConsolMatrix
 
 
 bool ConsolMatrix_drawPixel(int x, int y, unsigned char stateR, unsigned char stateG, unsigned char stateB)
 if something is wrong, returns false
 else true
-x - x cordinate of pixel
-y - y cordinate of pixel
+x - x coordinate of pixel
+y - y coordinate of pixel
 stateR/stateG/stateB - RGB colors in 0-255 values
-Use to draw pixel when you know x and y
+Use it to draw pixel when you know x and y
 
 
 bool ConsolMatrix_drawPixelA(int buffer_address, unsigned char stateR, unsigned char stateG, unsigned char stateB)
 if something is wrong, returns false
 else true
-buffer_address - addres of pixel
+buffer_address - address of pixel
 stateR/stateG/stateB - RGB colors in 0-255 values
-Use to draw pixel when you know pixel_address and you don't want to calculate it to x,y
+Use it to draw pixel when you know pixel address and you don't want to calculate it to x,y
 
 
 
 bool ConsolMatrix_fillAll(unsigned char state)
 if something is wrong, returns false
 else true
-state - color of Gray (no RGB possible) in 0-255 values
-
+state - color of Gray (R is State, G is State, B is State) in 0-255 values
+Use it to fill Matrix with color.
 
 bool ConsolMatrix_refreshMatrix()
 if something is wrong, returns false
 else true
-Use it to refresh Matrix (if you do DrawPixelA it doesn't refresh Matrix)
+Use it to refresh Matrix (if you do DrawPixel or DrawPixelA it doesn't refresh Matrix)
+It can make artefacts.
+It fixes artefacts 1/10 at a time.
+
+bool ConsolMatrix_refreshMatrixAndFix()
+if something is wrong, returns false
+else true
+Use it to refresh Matrix (if you do DrawPixel or DrawPixelA it doesn't refresh Matrix)
+It fixes artefacts.
 
 
 Warnings:

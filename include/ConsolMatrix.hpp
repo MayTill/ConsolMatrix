@@ -14,5 +14,6 @@ namespace ConsolMatrix
 	inline static bool drawPixelA(int buffer_address, unsigned char stateR, unsigned char stateG, unsigned char stateB) { return ConsolMatrix_drawPixelA(buffer_address, stateR, stateG, stateB); };
 	inline static bool fillAll(unsigned char state) { return ConsolMatrix_fillAll(state); };
 	inline static bool refreshMatrix() { return ConsolMatrix_refreshMatrix(); };
+	inline static bool refreshMatrixAndFix() { return ConsolMatrix_refreshMatrixAndFix(); };
 }
 #endif
